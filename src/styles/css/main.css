@@ -361,7 +361,7 @@ main {
   border-radius: 1rem;
   padding: 1.25rem;
   width: 80vw;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -374,7 +374,18 @@ main {
   margin-bottom: 4rem;
 }
 .quote-box h2 {
-  height: calc(100% - 15rem);
-  width: 80%;
   text-align: center;
+}
+
+.update-btn {
+  color: #eeeeee;
+  background-color: rgb(120, 71, 120);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  scale: 1;
+  transition: 0.15s ease-in-out;
+}
+.update-btn:hover {
+  scale: 1.1;
+  transition: 0.15s ease-in-out;
 }/*# sourceMappingURL=main.css.map */
