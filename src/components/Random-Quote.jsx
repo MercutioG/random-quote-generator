@@ -29,7 +29,7 @@ const RandomQuote = () => {
 
   useEffect(() => {
     updateQuote()
-  },[updateQuote])
+  },[])
 
   if(isError){
     return(
