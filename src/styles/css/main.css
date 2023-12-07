@@ -402,4 +402,15 @@ main {
 .update-btn:hover {
   scale: 1.1;
   transition: 0.15s ease-in-out;
+}
+
+@media screen and (max-width: 950px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  h1, h2 {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */
