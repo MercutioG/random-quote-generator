@@ -6,11 +6,11 @@ const RandomQuote = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
 
-  const [animate, setAnimate] = useState(false)
+  const [count, setCount] = useState(0)
 
-  const updateQuote = async() => {
+  useEffect(() => {
     const url = 'https://api.quotable.io/random'
-    await fetch(url)
+    fetch(url)
     .then((response) => {
       if(response.status >= 200 && response.status <= 299){
         return response.json()
@@ -23,13 +23,8 @@ const RandomQuote = () => {
       setAuthor(output.author)
       setQuote(output.content)
       setIsLoading(false)
-      setAnimate(!animate)
     }).catch((error) => {console.log(error)});
-  }
-
-  useEffect(() => {
-    updateQuote()
-  },[])
+  },[count])
 
   if(isError){
     return(
@@ -50,9 +45,9 @@ const RandomQuote = () => {
   return (
     <div className='quote-box'>
       <h1>Random Quote</h1>
-      <h2 key={animate}>{quote}</h2>
+      <h2 key={count}>{quote}</h2>
       <h3><em>-{author}</em></h3>
-      <button className='update-btn' onClick={() => updateQuote()}>Generate Quote</button>
+      <button className='update-btn' onClick={() => setCount(count + 1)}>Generate Quote</button>
     </div>
   )
 }
