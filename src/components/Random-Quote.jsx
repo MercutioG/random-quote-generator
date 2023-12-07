@@ -8,9 +8,9 @@ const RandomQuote = () => {
 
   const [animate, setAnimate] = useState(false)
 
-  const updateQuote = () => {
+  const updateQuote = async() => {
     const url = 'https://api.quotable.io/random'
-    fetch(url)
+    await fetch(url)
     .then((response) => {
       if(response.status >= 200 && response.status <= 299){
         return response.json()
@@ -29,7 +29,7 @@ const RandomQuote = () => {
 
   useEffect(() => {
     updateQuote()
-  },[])
+  },[updateQuote])
 
   if(isError){
     return(
